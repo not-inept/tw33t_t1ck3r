@@ -1,0 +1,106 @@
+<!doctype html>
+
+<html>
+<head>
+<title>Mason's TweetTicker 9000</title>
+<meta charset="utf-8">
+
+<!-- fonts and my styles -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="./app.css">
+
+<!-- jquery mobile styles and js -->
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="tickTickity">
+  <!-- Tags will go here -->
+  <div id="tagBox"></div>
+
+  <!-- Tweets will go here later -->
+  <main id="tweetBox"></main>
+
+
+  <div ng-app="" data-role="panel" data-display="overlay" id="left-panel" data-theme="b">
+      <h1>Settings...</h1>
+      <!-- no angular because jquery mobile conflicts -->
+      <div class="ui-field-contain">
+        <label for="slider-1">Tag tick update speed (seconds):</label>
+        <input type="range" name="slider-1" id="slider-1" value="3" min="1" max="10"/>
+      </div>
+
+      <div class="ui-field-contain">
+        <label for="slider-2">Tweet tick update speed (seconds):</label>
+        <input type="range" name="slider-2" id="slider-2" value="3" min="1" max="10">
+      </div>
+
+      <!-- woah angular for validations -->
+      <div ng-app="">
+      
+      <form id="angular" name="btn_form" method="post" novalidate>
+        <div  class="ui-field-contain" novalidate>
+          <label for="num-1">Number of tweets to pull:</label><br>
+          <input type="number" ng-model="btn.num" name="num" id="num-1" min="1" value="20" required/>
+          <span class="err" ng-show="btn_form.num.$error.required">This is required!</span>
+        
+          <span class="err" ng-show="btn_form.num.$error.number">This is not a valid number!</span>
+        </div>
+
+        <div class="ui-field-contain">
+          <label for="text-1">Filter query:</label><br>
+          <input type="search" name="query" id="text-1" value="code" ng-model="btn.que" required>
+
+          <span class="err" ng-show="btn_form.query.$error.required">This is required!</span>
+        
+        </div>
+
+        <div class="ui-field-contain">
+          <label for="text-2">Output file (only reads mongo):</label><br>
+          <input type="text" id="text-2" name="file" value="mongo" ng-model="btn.fil" required>
+
+          <span class="err" ng-show="btn_form.file.$error.required">This is required!</span>
+
+        </div>
+
+        <br>
+          <button href="#" data-rel="pull" data-role="button" data-mini="true" data-inline="true" data-icon="refresh" data-iconpos="right" ng-disabled="!btn_form.$valid" onclick='tickerInit();'>Pull Data</button>
+
+          <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+
+        </form>
+        <hr>
+        <form id="angular2" name="btn_form2" method="post" novalidate>
+          <div class="ui-field-contain">
+          <label for="text-3">Output file:</label><br>
+          <input type="text" id="text-3" name="file1" value="export.json" ng-model="btn.fil" required>
+          <span class="err" ng-show="btn_form2.file1.$error.required">This is required!</span>
+          </div>
+
+          <button href="#" data-rel="export" data-role="button" data-mini="true" data-inline="true" data-icon="refresh" data-iconpos="right" ng-disabled="!btn_form2.$valid" onclick='exportJSON();'>
+            Export Mongo to JSON
+          </button>
+        </form>
+      </div>
+
+
+  </div><!-- /panel -->
+
+  <div data-role="header" data-theme="b">
+            <a href="#left-panel" data-theme="d" data-icon="gear" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Open left panel</a>
+  </div><!-- /header -->
+
+  <script src="./app.js"></script>
+</div>
+
+<div id="loading">
+  <img src='./spinner.gif'>
+</div>
+
+</body>
+</html>

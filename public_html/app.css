@@ -1,0 +1,173 @@
+@media only screen and (max-width: 900px) {
+  body {
+    background-color: #dedede;
+    font-family: 'Open Sans', sans-serif;
+    min-width: 320px;
+  }
+
+  #tagBox {
+    min-width: 320px;
+    position: absolute;
+    overflow: hidden;
+    left: 1%;
+    right: 1%;
+    top: 3%;
+    width: 98%;
+    height: 10%;
+  }
+  .tag {
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    top: 0%;
+    font-size: .5em;
+    vertical-align: middle;
+    text-align: center;
+    overflow-x: hidden;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+  }
+
+  #tweetBox {
+    min-width: 320px;
+    position: absolute;
+    left: 1%;
+    right: 1%;
+    top: 10%;
+    width: 98%;
+    height: 90%;
+    overflow: hidden;
+  }
+
+  .tweet {
+    position: absolute;
+    height: 19%;
+    width: 100%;
+    left: %;
+    right: 0%;
+    font-size: .8em;
+    background-color: #FFFFFF;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  body {
+    background-color: #dedede;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  #tagBox {
+    position: absolute;
+    overflow: hidden;
+    left: 10%;
+    right: 10%;
+    top: 4%;
+    width: 80%;
+    height: 10%;
+  }
+
+  .tag {
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    top: 0%;
+    font-size: .7em;
+    vertical-align: middle;
+    text-align: center;
+    overflow-x: hidden;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+  }
+
+  #tweetBox {
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 15%;
+    width: 80%;
+    height: 81%;
+    overflow: hidden;
+  }
+
+  .tweet {
+    position: absolute;
+    height: 15%;
+    width: 90%;
+    left: 5%;
+    right: 5%;
+    font-size: 1em;
+    background-color: #FFFFFF;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+  }
+}
+
+.tweetPic {
+  position: absolute;
+  height: 100%;
+  width: 15%;
+  left: 0%;
+  top: 0%;
+  background-color: green;
+  border-right: solid #b4b4b4 1px;
+  overflow-x: hidden;
+}
+
+.tweetText {
+  padding: 1%;
+  position: absolute;
+  height: 100%;
+  width: 80%;
+  left: 16%;
+  right: 0%;
+  top: 0%;
+
+}
+
+.tweetUser {
+  width: 100%;
+  word-wrap: break-word;
+  font-size: 1em;
+}
+
+#loading {
+  background-color: white;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  z-index: 999;
+}
+
+#loading img{
+  image-rendering: optimizeSpeed;             /* F**K SMOOTHING, GIVE ME SPEED  */
+  image-rendering: -moz-crisp-edges;          /* Firefox                        */
+  image-rendering: -o-crisp-edges;            /* Opera                          */
+  image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+  image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+  -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+  width: 200px;
+  position: relative;
+  margin: auto;
+  top: 50vh;
+  left: 50vw;
+  margin-left: -100px;
+  margin-top: -150px;
+  z-index: 1000;
+}
+
+.err {
+  color: red;
+  float: right;
+}
