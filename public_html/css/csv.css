@@ -1,0 +1,73 @@
+/* this is all for fun :) */
+#loading {
+  background-color: white;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  z-index: 999;
+  display: none;
+}
+
+#loading img{
+  image-rendering: optimizeSpeed;             /* MEH SMOOTHING, GIVE ME SPEED   */
+  image-rendering: -moz-crisp-edges;          /* Firefox                        */
+  image-rendering: -o-crisp-edges;            /* Opera                          */
+  image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+  image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+  -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+  width: 200px;
+  position: relative;
+  margin: auto;
+  top: 50vh;
+  left: 50vw;
+  margin-left: -100px;
+  margin-top: -150px;
+  z-index: 1000;
+}
+
+/* this is less fun */
+#convBox {
+  display: none;
+}
+.decoBox {
+    width:80%;
+    border:2px solid black;
+    margin: 5% auto 5% auto;
+    /*min-width: 400px;*/
+}
+
+.decoHead {
+  width: 10em;
+  text-align: center;
+  font-size: 1em;
+  margin-top:-1.5%;
+  margin-left:5px;
+  background:white;
+}
+
+#notice-bar {
+  width: 80%;
+  margin: 2% auto 2% auto;
+}
+
+.green {
+  background-color: #98FB98;
+}
+
+.red {
+  background-color: #FC2D2D;
+}
+form {
+  margin: 2px;
+  font-size: .75em;
+}
+
+p {
+  text-align: center;
+}
+button {
+  margin: 2%;
+}
+

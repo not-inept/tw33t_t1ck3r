@@ -1,15 +1,20 @@
 #Lab 9
 
 ##Usage
-First, ensure an instance of mongo is running with the dbpath flag set to the applicaiton's data path (the /data/ at the root directory).
+First, ensure an instance of mongoDB is running.
 
-After that, upon installing node downloading the application (and permitting express through your firewall/opening port 3000 if necessary) you should have all the files you need to run my server and app set up so long as you have a constant internet connection.
+After that run:
+  npm install
+To install all of the node modules. Alternatively, the applications is published on npm and can be fully installed by running:
+  npm install tw33t_t1ck3r
+The app is currently published as a module.
 
-Go to the top directory of the application and type 'node server.js' to start the server once the mongod instance is connected.
+Then run:
+  npm start
 
-Then visit 'localhost:3000' to see it up and running.
+After that visit 'localhost:3000' to see it up and running.
 
-Click the settings button to go to the sidebar, where you can pull new tweets with a filter query or scroll to the bottom to export whatever exists in the 'tweets' collection in the MongoDB data to a filename of your choice.
+The landing page will allow you to choose between conversions and tweet ticking.
 
 ##Mongo 
 Mongo was easy to play with, as it lets you put objects in directly and does all the the magic on its own. Finding and destroying the database was also as simple as removing/selecting {} which corresponding to all options. PullData now automatically pulls to the MongoDB using insert and everything else just works.

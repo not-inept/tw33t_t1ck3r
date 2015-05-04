@@ -1,6 +1,6 @@
 {
   "name": "tw33t_t1ck3r",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tweet ticker that pulls tweets using the stream API and stores them in a Mongo database, and allows exporting JSON / CSV data from the Mongo stored tweets.",
   "main": "server.js",
   "dependencies": {
@@ -8,12 +8,15 @@
     "express": "^4.12.2",
     "mongodb": "^2.0.27",
     "multer": "^0.1.8",
+    "ncp": "^2.0.0",
     "twitter": "^1.2.3"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "install": "node move_it.js",
+    "postinstall": "node remove_it.js"
   },
   "keywords": [
     "tw33t",
@@ -22,5 +25,9 @@
     "t1cker"
   ],
   "author": "Mason Cooper <mason@mcooper.tk> (http://www.mcooper.tk)",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npm/npm.git"
+  }
 }

@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Nifty Simple CSV Converter</title>
+  <script src="./js/csv.js"></script>
+  <!-- external script includes -->
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+
+  <!-- external stylesheets -->
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link rel="stylesheet" type="text/css" href="./css/csv.css">
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+  <main>
+    <div id="notice-bar"></div>
+    <div class="decoBox" id="uploadBox">
+      <h1 class="decoHead">Upload & Convert</h1>
+      <div ng-app="">
+      <form id="uploadForm" name="btn_form" enctype="multipart/form-data" action = "/upload/" method = "post" class="pure-form pure-form-aligned" novalidate>
+        <fieldset class="ui-field-contain">
+          <div class="pure-control-group">
+            <label for="userJSON">File to upload: </label>
+            <input type="file" ng-model="btn.userJSON" name="userJSON" id="userJSON" required/>
+          </div>
+          <div class="pure-control-group">
+            <label for="outFile">Output file:</label>
+            <input type='text' name="outFile" id="outFile" required/>
+          </div>
+          <div class="pure-controls">
+            <button type="submit" name="submit" class="pure-button pure-button-primary">Upload & Convert</button>
+          </div>
+        </fieldset>
+      </form>
+      </div>       
+    </div>
+    <div class="decoBox">
+      <h1 class="decoHead">Convert to CSV</h1>
+      <form class="pure-form pure-form-aligned" action="submitConvert();">
+        <fieldset>
+          <div class="pure-control-group">          
+            <label for="inputFile">Input file: </label>
+            <input type="text" id="inputFile" value="tweets.json" title="(Must already exist in /public_html/uploads/)"/>
+          </div>
+          <div class="pure-control-group">
+            <label for="outputFile">Output file:</label>
+            <input type='text' name="outputFile" id="outputFile" value="tweets.csv"/>
+          </div>
+          <div class="pure-controls">
+            <button type="button" id="convert" class="pure-button pure-button-primary" onclick="convertFile(document.getElementById('inputFile').value, document.getElementById('outputFile').value);">Convert</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="decoBox" id="convBox"><h1 class="decoHead">Output / Results</h1><p id="convText"></p></div>
+  </main>
+  <aside id="loading">
+    <img src='./spinner.gif'>
+  </aside>
+</body>
+
+</html>
