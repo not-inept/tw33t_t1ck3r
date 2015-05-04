@@ -1,7 +1,7 @@
 {
   "name": "tw33t_t1ck3r",
-  "version": "1.0.1",
-  "description": "A tweet ticker that pulls tweets using the stream API and stores them in a Mongo database, and allows exporting JSON / CSV data from the Mongo stored tweets.",
+  "version": "1.0.2",
+  "description": "A very basic tweet ticker that pulls tweets using the stream API and stores them in a Mongo database, and allows exporting JSON / CSV data from the Mongo stored tweets.",
   "main": "server.js",
   "dependencies": {
     "angular": "^1.3.14",

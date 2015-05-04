@@ -159,7 +159,7 @@ app.post('/upload/',function(req,res){
     console.log(req);
     res.statusCode = 302;
     //send us the index with the name of the uploaded file and uploaded boolean=true
-    res.setHeader('Location', 'http://' + req.headers['host'] + '/?u=1&n=' + encodeURIComponent(req.files.userJSON.name) + '&o=' + encodeURIComponent(req.body.outFile));
+    res.setHeader('Location', 'http://' + req.headers['host'] + '/csv.html?u=1&n=' + encodeURIComponent(req.files.userJSON.name) + '&o=' + encodeURIComponent(req.body.outFile));
     res.end();
   }
 });
