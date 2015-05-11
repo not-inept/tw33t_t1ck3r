@@ -1,3 +1,10 @@
+##Update:
+My visualize button is the new last option involving analysis.
+
+The most recent update repairs minor bugs with the previous implementation and adds a tweet stats page which displays the relationship between the number of friends and followers users have, the most common characters used in tweets (excluding whitespace, which was surprisingly common despite the limited space), and a tweet size frequency distribution. All of this uses Chart.js for functional and elegant graphs.
+
+Additionally, the familiar side menu is attached to the top of the page for easy access and tweet pulling from the analysis page.
+
 #tw33t_t1cker
 
 ##Usage

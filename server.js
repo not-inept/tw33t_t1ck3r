@@ -171,7 +171,7 @@ app.get('/ticker/reqtweets/:number/:query/:outfile', function(req, response) {
   if (tweetsStatus) {
     //var data = "regtweets:\n" + "number: " + request.params.number + "\nquery: " + request.params.query;
     tweetsStatus = false;
-    getTweets(req.params.number, req.params.query, root + req.params.outfile, mongo);
+    getTweets(req.params.number, req.params.query, root + req.params.outfile);
     response.send('Buzzing away...');
   } else {
     response.send('Already working, buzz me later');

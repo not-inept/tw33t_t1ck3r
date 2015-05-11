@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>tw33t_t1ck3r data analysis</title>
+  <!-- external stylesheets -->
+  <link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+
+    <!-- jquery mobile styles and js -->
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+  <link rel="stylesheet" type="text/css" href="./css/anal.css">
+
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <div ng-app="" data-role="panel" data-display="overlay" id="left-panel" data-theme="b">
+      <h1>Settings...</h1>
+
+      <!-- woah angular for validations -->
+      <div ng-app="">
+      
+      <form id="angular" name="btn_form" method="post" novalidate>
+        <div  class="ui-field-contain" novalidate>
+          <label for="num-1">Number of tweets to pull:</label><br>
+          <input type="number" ng-model="btn.num" name="num" id="num-1" min="1" value="20" required/>
+          <span class="err" ng-show="btn_form.num.$error.required">This is required!</span>
+        
+          <span class="err" ng-show="btn_form.num.$error.number">This is not a valid number!</span>
+        </div>
+
+        <div class="ui-field-contain">
+          <label for="text-1">Filter query:</label><br>
+          <input type="search" name="query" id="text-1" value="code" ng-model="btn.que" required>
+
+          <span class="err" ng-show="btn_form.query.$error.required">This is required!</span>
+        
+        </div>
+
+        <div class="ui-field-contain">
+          <label for="text-2">Output file (only reads mongo):</label><br>
+          <input type="text" id="text-2" name="file" value="mongo" ng-model="btn.fil" required>
+
+          <span class="err" ng-show="btn_form.file.$error.required">This is required!</span>
+
+        </div>
+
+        <br>
+          <button href="#" data-rel="pull" data-role="button" data-mini="true" data-inline="true" data-icon="refresh" data-iconpos="right" ng-disabled="!btn_form.$valid" onclick='tickerInit();'>Pull Data</button>
+
+          <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+
+        </form>
+        <hr>
+        <form id="angular2" name="btn_form2" method="post" novalidate>
+          <div class="ui-field-contain">
+          <label for="text-3">Output file:</label><br>
+          <input type="text" id="text-3" name="file1" value="export.json" ng-model="btn.fil" required>
+          <span class="err" ng-show="btn_form2.file1.$error.required">This is required!</span>
+          </div>
+
+          <button href="#" data-rel="export" data-role="button" data-mini="true" data-inline="true" data-icon="refresh" data-iconpos="right" ng-disabled="!btn_form2.$valid" onclick='exportJSON();'>
+            Export Mongo to JSON
+          </button>
+        </form>
+      </div>
+
+  </div><!-- /panel -->
+
+  <div data-role="header" data-theme="b" style="z-index: 3000;">
+            <a href="#left-panel" data-theme="d" data-icon="gear" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Open left panel</a>
+  </div><!-- /header -->
+
+  <ul class="pure-menu-list">
+    <li class="pure-menu-heading"><a onclick="window.location='./index.html';" class="pure-menu-link">tw33t_t1cker (click to return)</a></li>
+
+    <li class="pure-menu-heading">Friends vs Followers</li>
+    <li class="pure-menu-item"><br><canvas id="myLine" width="400" height="400"></canvas></li>
+
+    <li class="pure-menu-heading">Most Common Character in Tweets</li>
+    <li class="pure-menu-item"><br><canvas id="myPolar" width="400" height="400"></canvas>
+
+    <li class="pure-menu-heading">Tweet Sizes Frequency Distribution</li>
+    <li class="pure-menu-item"><br><canvas id="myBar" width="400" height="400"></canvas></li>
+    
+</li>    
+
+  </ul>
+
+  <div id="loading">
+    <img src='./spinner.gif'>
+  </div>
+
+  <script src="./js/Chart.js"></script>
+  <script src="./js/analysis.js"></script>
+</body>
+</html>
